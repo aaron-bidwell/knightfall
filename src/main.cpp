@@ -3,6 +3,10 @@
 #include <dxgi.h>
 #include <d3dcompiler.h>
 #include <string>
+#include <vector>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
 // Link libs (an alternative to using CMake's target_link_libraries)
 #pragma comment(lib, "d3d11.lib")

@@ -7,22 +7,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
 
-find_package(assimp REQUIRED)
+set(ASSIMP_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src/third_party/assimp/include")
+set(ASSIMP_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/src/third_party/build/lib/Release/assimp-vc143-mt.lib")
 
 # Add your source files here
 add_executable(MyProject
     src/main.cpp
-    # add other .cpp files if needed
 )
 
-# Link against DirectX libraries (for Direct3D 11, for example):
+target_include_directories(MyProject PRIVATE "${ASSIMP_INCLUDE_DIR}")
+
 target_link_libraries(MyProject PRIVATE
     d3d11
     dxgi
     dxguid
     d3dcompiler
-    # Add d3dcompiler, dxcompiler, or others if you need them
+    "${ASSIMP_LIBRARY}"
 )
-
-# If you have separate includes, you can do:
-# target_include_directories(MyProject PRIVATE "path/to/includes")
