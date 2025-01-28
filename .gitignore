@@ -1,32 +1,17 @@
-# Prerequisites
-*.d
+# Ignore build directories for CMake
+build/
+out/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Ignore Visual Studio Code workspace settings (optional)
+.vscode/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Ignore Visual Studio files (if using MSVC or full Visual Studio)
+*.vcxproj
+*.vcxproj.filters
+*.sln
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# macOS metadata
+.DS_Store
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# Windows thumbnail or system files
+Thumbs.db
