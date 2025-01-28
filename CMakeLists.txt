@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
 
+find_package(assimp REQUIRED)
+
 # Add your source files here
 add_executable(MyProject
     src/main.cpp
@@ -18,6 +20,7 @@ target_link_libraries(MyProject PRIVATE
     d3d11
     dxgi
     dxguid
+    d3dcompiler
     # Add d3dcompiler, dxcompiler, or others if you need them
 )
 
